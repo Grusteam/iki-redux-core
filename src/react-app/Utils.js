@@ -1,11 +1,11 @@
 import CONSTANTS, { initialState } from './Constants.js';
 
-const
+export const
 	getInitialState = () => {
 		const tests = [2];
 
 		tests.forEach(val => {
-			initialState[`test_${val}_key`] = `test_${val}_val`;
+			initialState.main[`test_${val}_key`] = `test_${val}_val`;
 		});
 
 		return initialState;
@@ -23,11 +23,11 @@ const
 	getSetupFields = setup => {
 		const a = [];
 
-		setup.forEach(({ name, setup }) => {
-			setup.forEach(({ name, snake }) => {
-				const camel = notationModifier(snake);
+		setup.forEach(({ name, branch, setup }) => {
+			setup.forEach(({ name, reducer, field }) => {
+				const camel = notationModifier(field);
 
-				a.push(snake);
+				a.push({ branch, field });
 			});
 		});
 			
@@ -36,8 +36,8 @@ const
 	getReduxStateFields = (state, fields) => {
 		const o = {};
 
-		fields.forEach(field => {
-			o[field] = state[field];
+		fields.forEach(({ branch, reducer, field }) => {
+			o[field] = state[branch][field];
 		});
 
 		return o;
@@ -46,13 +46,6 @@ const
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 	
 const UTILS = {
-	getInitialState,
-	notationModifier,
-	getSetupFields,
-	getReduxStateFields,
-};
-
-export {
 	getInitialState,
 	notationModifier,
 	getSetupFields,

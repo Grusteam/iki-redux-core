@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /* tools */
@@ -13,6 +13,10 @@ class Button extends Component {
 
 		const
 			{  } = this.props; /* parent */
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		return false;
 	}
 	
 	/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 /* redux actions */
-import ACTIONS, {  } from '../redux/actions.js'
+import ACTIONS, {  } from '../redux/actions.js';
 
 /* components */
-import Button from './Button.js'
+import Button from './Button.js';
 
 /* tools */
 import CONSTANTS, { controllerSetup } from '../Constants.js';
@@ -14,21 +14,15 @@ import UTILS, { notationModifier, getReduxStateFields, getSetupFields } from '..
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-class Controller extends Component {
+class Controller extends PureComponent {
 	constructor(props, context) {
 		super(props);
 
 		const
 			{  } = this.props, /* redux */
 			{  } = this.props; /* parent */
+	}
 
-	}
-	
-	componentWillReceiveProps({ STEP }) {
-		if ( false ) {
-		}
-	}
-	
 	onButtonClick() {
 		const
 			{  } = this.props, /* redux */
@@ -46,19 +40,19 @@ class Controller extends Component {
 			<div className="controller__title">Controller</div>
 
 			{controllerSetup.map(({name, setup}, i) => {
-				return <div className="section" key={i}>
+				return <div className="section" key={`${name}_${i}`}>
 					<div className="section__title">{ name }</div>
 					<div className="section__body">
-						{setup.map(({name, snake}, i) => {
-							const camel = notationModifier(snake);
+						{setup.map(({name, reducer, field}, i) => {
+							const camel = notationModifier(reducer);
 
-							return <div className="param" key={i}>
+							return <div className="param" key={`${reducer}_${i}`}>
 								<Button
 								name={name}
 								onClick={() => testButtonClick(camel)}
 							/>
 								<div className="param__value">
-									{`${this.props[snake]}`}
+									{`${this.props[field]}`}
 								</div>
 							</div>
 						})}	
@@ -80,7 +74,7 @@ const
 	},
 	mapDispatchToProps = dispatch => ({
 		testButtonClick: (key) => {
-			return ACTIONS[key] ? dispatch(ACTIONS[key]()) : console.log(`no action "${key}" in actions`);
+			return ACTIONS[key] ? dispatch(ACTIONS[key](Math.floor(Math.random() * 10))) : console.warn(`no action "${key}" in actions`);
 		}, 
 	});
 

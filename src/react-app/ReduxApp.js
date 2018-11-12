@@ -3,7 +3,9 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 
 /* reducers */
-import rootReducer from './redux/rootReducer.js'
+import main from './redux/main.js'
+import graph from './redux/graph.js'
+import cloud from './redux/cloud.js'
 
 /* tools */
 import CONSTANTS, {  } from './Constants.js';
@@ -14,10 +16,11 @@ import App from './App.js'
 
 /* redux store creation */
 const store = createStore(
-	rootReducer,
-	/*combineReducers({
-		rootReducer,
-	}),*/
+	combineReducers({
+		main,
+		graph,
+		cloud,
+	}),
 	getInitialState(),
 	compose(
 		// applyMiddleware(thunk),

@@ -1,51 +1,73 @@
 import UTILS, {  } from './Utils.js';
 
-const
+export const
 	controllerSetup = [
 		{
 			name: 'Main',
+			branch: 'main',
 			setup: [
 				{
 					name: 'splash',
-					snake: 'SHOW_SPLASH',
+					reducer: 'SHOW_SPLASH',
+					field: 'SHOW_SPLASH',
 				},
 				{
 					name: 'loader',
-					snake: 'SHOW_LOADER',
+					reducer: 'SHOW_LOADER',
+					field: 'SHOW_LOADER',
 				},
 			]
 		},
 		{
 			name: 'Graph',
+			branch: 'graph',
 			setup: [
 				{
 					name: 'type',
-					snake: 'GRAPH_TYPE',
+					reducer: 'GRAPH_TYPE',
+					field: 'GRAPH_TYPE',
 				},
 				{
 					name: 'path',
-					snake: 'GRAPH_PATH',
+					reducer: 'GRAPH_PATH',
+					field: 'GRAPH_PATH',
+				},
+			]
+		},
+		{
+			name: 'Cloud',
+			branch: 'cloud',
+			setup: [
+				{
+					name: 'selection',
+					reducer: 'CHANGE_SELECTION',
+					field: 'SELECTION',
 				},
 			]
 		},
 	],
 	initialState = {
-		test_1_key: 'test_1_val',
-		TEST_COUNTER: 0,
-		SHOW_SPLASH: false,
-		SHOW_LOADER: false,
-		GRAPH_TYPE: false,
-		GRAPH_PATH: false,
+		main: {
+			test_1_key: 'test_1_val',
+			TEST_COUNTER: 0,
+			SHOW_SPLASH: false,
+			SHOW_LOADER: false,
+			USER: {
+				
+			},
+		},
+		graph: {
+			GRAPH_TYPE: false,
+			GRAPH_PATH: false,
+		},
+		cloud: {
+			SELECTION: [0],
+		},
 	};
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 	
 const CONSTANTS = {
-	controllerSetup,
-	initialState,
-};
-
-export {
 	controllerSetup,
 	initialState,
 };

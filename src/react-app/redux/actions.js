@@ -1,42 +1,26 @@
 import CONSTANTS, {  } from '../Constants.js';
 
-/* TEST_ACTION */
-const testAction = () => {
-	return {type: 'TEST_ACTION'};
-}
+export const
 
-const showSplash = () => {
-	return {type: 'SHOW_SPLASH'};
-}
+/* main */
+	showSplash = () => ({type: 'SHOW_SPLASH'}),
+	showLoader = () => ({type: 'SHOW_LOADER'}),
 
-const showLoader = () => {
-	return {type: 'SHOW_LOADER'};
-}
+/* graph */
+	graphType = () => ({type: 'GRAPH_TYPE'}),
+	graphPath = () => ({type: 'GRAPH_PATH'}),
 
-const graphType = () => {
-	return {type: 'GRAPH_TYPE'};
-}
-
-const graphPath = () => {
-	return {type: 'GRAPH_PATH'};
-}
+/* cloud */
+	changeSelection = (nodes) => ({type: 'CHANGE_SELECTION', payload: { nodes }});
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
 const ACTIONS = {
-	testAction,
 	showSplash,
 	showLoader,
 	graphType,
 	graphPath,
-};
-
-export {
-	testAction,
-	showSplash,
-	showLoader,
-	graphType,
-	graphPath,
+	changeSelection,
 };
 
 export default ACTIONS;
