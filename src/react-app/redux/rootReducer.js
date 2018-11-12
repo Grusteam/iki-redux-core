@@ -12,7 +12,27 @@ const rootReducer = (state = {}, action) => {
 			console.log('TEST_ACTION');
 
 			return Object.assign({}, state, {
-				'TEST_COUNTER': state['TEST_COUNTER'] + 1
+				'TEST_COUNTER': state['TEST_COUNTER'] + 1,
+			});
+		
+		case 'SHOW_SPLASH':
+			return Object.assign({}, state, {
+				'SHOW_SPLASH': !state['SHOW_SPLASH'],
+			});
+		
+		case 'SHOW_LOADER':
+			return Object.assign({}, state, {
+				'SHOW_LOADER': !state['SHOW_LOADER'],
+			});
+		
+		case 'GRAPH_TYPE':
+			return Object.assign({}, state, {
+				'GRAPH_TYPE': !state['GRAPH_TYPE'],
+			});
+		
+		case 'GRAPH_PATH':
+			return Object.assign({}, state, {
+				'GRAPH_PATH': !state['GRAPH_PATH'],
 			});
 			
 		/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */

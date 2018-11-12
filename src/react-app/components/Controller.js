@@ -10,7 +10,7 @@ import Button from './Button.js'
 
 /* tools */
 import CONSTANTS, { controllerSetup } from '../Constants.js';
-import UTILS, {  } from '../Utils.js';
+import UTILS, { notationModifier, getReduxStateFields, getSetupFields } from '../Utils.js';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
@@ -42,19 +42,25 @@ class Controller extends Component {
 			{ testButtonClick } = this.props, /* redux */
 			{  } = this.props; /* parent */
 			
-		return <div>
-			<div>Controller</div>
+		return <div className="controller">
+			<div className="controller__title">Controller</div>
 
 			{controllerSetup.map(({name, setup}, i) => {
-				return <div key={i}>
-					<div>{ name }</div>
-					<div>
-						{setup.map(({name, key}, i) => {
-							return <Button
-								key={i}
+				return <div className="section" key={i}>
+					<div className="section__title">{ name }</div>
+					<div className="section__body">
+						{setup.map(({name, snake}, i) => {
+							const camel = notationModifier(snake);
+
+							return <div className="param" key={i}>
+								<Button
 								name={name}
-								onClick={() => testButtonClick(key)}
+								onClick={() => testButtonClick(camel)}
 							/>
+								<div className="param__value">
+									{`${this.props[snake]}`}
+								</div>
+							</div>
 						})}	
 					</div>
 				</div>
@@ -66,12 +72,16 @@ class Controller extends Component {
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
 const
-	mapStateToProps = ({  }) => {
+	mapStateToProps = (state) => {
+		
 		return {
+			...getReduxStateFields(state, getSetupFields(controllerSetup))
 		};
 	},
 	mapDispatchToProps = dispatch => ({
-		testButtonClick: (key) => dispatch(ACTIONS[key]()), 
+		testButtonClick: (key) => {
+			return ACTIONS[key] ? dispatch(ACTIONS[key]()) : console.log(`no action "${key}" in actions`);
+		}, 
 	});
 
 const ControllerRedux = connect(

@@ -22,6 +22,7 @@ class Button extends Component {
 			{ name, onClick } = this.props; /* parent */
 			
 		return <button
+			className="button"
 			type="button"
 			onClick={onClick}
 		>
