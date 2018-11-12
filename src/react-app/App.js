@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 /* redux actions */
-import Actions, {  } from './redux/actions.js'
+import ACTIONS, {  } from './redux/actions.js'
 
 /* tools */
-import CONSTANTS, { steps } from './Constants.js';
-import UTILS, { validateForm } from './Utils.js';
+import CONSTANTS, {  } from './Constants.js';
+import UTILS, {  } from './Utils.js';
 
 /* components */
-import UniversalStep from './components/UniversalStep.js'
+import Controller from './components/Controller.js'
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
@@ -18,7 +18,7 @@ class App extends Component {
 	constructor(props, context) {
 		super(props);
 
-		const { STEP } = props;
+		const {  } = props; /* redux */
 	}
 	
 	componentWillReceiveProps({ STEP }) {
@@ -30,28 +30,22 @@ class App extends Component {
 	
 	render() {
 		const
-			{ STEP } = this.props; /* redux state */
+			{  } = this.props; /* redux */
 			
-		return (
-			STEP === 4 ? 
-			<div id="finish">
-				finish
-			</div> :
-			<UniversalStep/>
-		);
+		return <Controller
+		/>
 	}
 }
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
 const
-	mapStateToProps = ({ STEP }) => {
+	mapStateToProps = ({  }) => {
 		return {
-			STEP,
 		};
 	},
 	mapDispatchToProps = dispatch => ({
-		// test: () => dispatch(test()),
+		// testActionClick: () => dispatch(testAction()),
 	});
 
 const AppRedux = connect(

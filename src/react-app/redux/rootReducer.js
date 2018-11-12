@@ -1,51 +1,18 @@
-import UTILS, { drawDump } from '../Utils.js';
+import UTILS, {  } from '../Utils.js';
 import CONSTANTS, {  } from '../Constants.js';
 
 const rootReducer = (state = {}, action) => {
 	const {
-		STEP = state.STEP ? +state.STEP : 1,
 		value = '',
-		error = null,
-		field = '',
-		valid = false,
 	} = action;
 	
-	const applyInputValues = () => {
-		const
-			currentFieldNewState = {
-				[`${field}`]: {
-					VALUE: value,
-					ERROR: error,
-					TOUCHED: true,
-				}
-			},
-			inputs = Object.assign({}, state.INPUTS, currentFieldNewState);
-		
-		return inputs;	
-	};
-	
 	switch (action.type) {
-		/* input */	
-		case 'SET_INPUT_VALUE':
+		/* TEST_ACTION */	
+		case 'TEST_ACTION':
+			console.log('TEST_ACTION');
+
 			return Object.assign({}, state, {
-				INPUTS: applyInputValues(),
-				STEP_VALIDITY: Object.assign({}, state.STEP_VALIDITY, {
-					[STEP]: valid,
-				}),
-			});
-			
-		/* step button */
-		case 'CHANGE_STEP':
-			return Object.assign( {}, state, {
-				STEP: STEP + 1
-			});
-			
-		/* step button */
-		case 'SET_STEP_ATTEMPT':
-			return Object.assign( {}, state, {
-				STEP_ATTEMPTS: Object.assign({}, state.STEP_ATTEMPTS, {
-					[STEP]: true,
-				}),
+				'TEST_COUNTER': state['TEST_COUNTER'] + 1
 			});
 			
 		/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */

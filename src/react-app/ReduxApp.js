@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import rootReducer from './redux/rootReducer.js'
 
 /* tools */
-import CONSTANTS, { steps } from './Constants.js';
+import CONSTANTS, {  } from './Constants.js';
 import UTILS, { getInitialState } from './Utils.js';
 
 /* components */
@@ -18,7 +18,7 @@ const store = createStore(
 	/*combineReducers({
 		rootReducer,
 	}),*/
-	getInitialState(steps),
+	getInitialState(),
 	compose(
 		// applyMiddleware(thunk),
 		window.devToolsExtension ? window.devToolsExtension() : f => f
