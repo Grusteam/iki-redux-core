@@ -76,3 +76,47 @@ const CONSTANTS = {
 };
 
 export default CONSTANTS;
+
+const reduxStoreSetup = {
+	/* MAIN STATES */
+	'SHOW_SPLASH': {
+		action: 'SET_SPLASH_VISIBILITY',
+		defaultState: false,
+	},
+	'SHOW_LOADER': {
+		action: 'SET_LOADER_VISIBILITY',
+		defaultState: true,
+	},
+
+	/* CONROLLED ELEMENTS */
+	'INPUT_VALUE': {
+		action: 'SET_INPUT_VALUE',
+		defaultState: '',
+	},
+	
+	/* GRAPH */
+	'GRAPH_TYPE': {
+		action: 'SET_GRAPH_TYPE',
+		defaultState: false,
+	},
+	'GRAPH_PATH': {
+		action: 'SET_GRAPH_PATH_STATE',
+		defaultState: false,
+	},
+
+	/* CLOUD */
+	'CLOUD_SELECTED_TAGS': {
+		action: 'SET_CLOUD_SELECTED_TAGS',
+		defaultState: [],
+	},
+
+}
+
+// const reduxStore = {
+// 	/* MAIN STATES */
+// 	SHOW_SPLASH
+// 	SHOW_LOADER
+
+// 	/* CONROLLED ELEMENTS */
+// 	INPUT_VALUE
+// }
