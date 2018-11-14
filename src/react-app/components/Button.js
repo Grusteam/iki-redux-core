@@ -2,8 +2,8 @@ import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /* tools */
-import CONSTANTS, {  } from '../Constants.js';
-import UTILS, {  } from '../Utils.js';
+import CONSTANTS, {  } from '../Constants';
+import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 

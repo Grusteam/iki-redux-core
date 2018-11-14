@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 /* components */
-// import LayoutComponent from './LayoutComponent.js'
+// import LayoutComponent from './LayoutComponent'
 
 /* tools */
-import CONSTANTS, {  } from '../Constants.js';
-import UTILS, {  } from '../Utils.js';
+import CONSTANTS, {  } from '../Constants';
+import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 

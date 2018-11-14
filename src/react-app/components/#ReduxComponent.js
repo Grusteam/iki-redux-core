@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 /* redux actions */
-import ACTIONS, {  } from '../redux/actions.js'
+import ACTIONS, {  } from '../redux/actions'
 
 /* components */
-import Button from './Button.js'
+import Button from './Button'
 
 /* tools */
-import CONSTANTS, {  } from '../Constants.js';
-import UTILS, {  } from '../Utils.js';
+import CONSTANTS, {  } from '../Constants';
+import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 

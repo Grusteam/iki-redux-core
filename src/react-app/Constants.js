@@ -1,4 +1,4 @@
-import UTILS, {  } from './Utils.js';
+import UTILS, {  } from './Utils';
 
 export const
 	controllerSetup = [
@@ -47,6 +47,9 @@ export const
 		},
 	],
 	initialState = {
+		auth: {
+			
+		},
 		main: {
 			test_1_key: 'test_1_val',
 			TEST_COUNTER: 0,

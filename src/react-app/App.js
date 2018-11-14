@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 /* redux actions */
-import ACTIONS, {  } from './redux/actions.js'
+import ACTIONS, {  } from './redux/actions'
 
 /* tools */
-import CONSTANTS, {  } from './Constants.js';
-import UTILS, {  } from './Utils.js';
+import CONSTANTS, {  } from './Constants';
+import UTILS, {  } from './Utils';
 
 /* components */
-import Controller from './components/Controller.js'
+import Controller from './components/Controller'
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
@@ -32,8 +32,11 @@ class App extends Component {
 		const
 			{  } = this.props; /* redux */
 			
-		return <Controller
-		/>
+		return <div id="app" className="app">
+			<p style={{position: 'absolute', top: 0, left: 0}}>App</p>
+			<Controller
+			/>
+		</div>
 	}
 }
 

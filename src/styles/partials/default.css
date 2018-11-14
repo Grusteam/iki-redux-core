@@ -14,11 +14,9 @@ h3 {
 	 margin: 0;
  }
 
-.step {
-	font-size: 25px;
-	text-transform: uppercase;
-	margin: 20px 0;
-}
+ .app {
+	 padding: 20px;
+ }
 
 .container,.container-fluid {
 	padding: 0;

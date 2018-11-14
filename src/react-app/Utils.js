@@ -1,4 +1,4 @@
-import CONSTANTS, { initialState } from './Constants.js';
+import CONSTANTS, { initialState } from './Constants';
 
 export const
 	getInitialState = () => {

@@ -3,16 +3,16 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 
 /* reducers */
-import main from './redux/main.js'
-import graph from './redux/graph.js'
-import cloud from './redux/cloud.js'
+import main from './redux/main'
+import graph from './redux/graph'
+import cloud from './redux/cloud'
 
 /* tools */
-import CONSTANTS, {  } from './Constants.js';
-import UTILS, { getInitialState } from './Utils.js';
+import CONSTANTS, {  } from './Constants';
+import UTILS, { getInitialState } from './Utils';
 
 /* components */
-import App from './App.js'
+import App from './App'
 
 /* redux store creation */
 const store = createStore(

@@ -1,5 +1,5 @@
-import UTILS, {  } from '../Utils.js';
-import CONSTANTS, {  } from '../Constants.js';
+import UTILS, {  } from '../Utils';
+import CONSTANTS, {  } from '../Constants';
 
 const rootReducer = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.cloud */

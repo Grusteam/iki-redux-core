@@ -9,7 +9,7 @@ import React, { Component, PureComponent, createElement } from 'react';
 import ReactDOM, { render, createPortal } from 'react-dom';
 
 /*components*/
-import ReduxApp from './react-app/ReduxApp.js';
+import ReduxApp from './react-app/ReduxApp';
 
 /* react container in layout */
 const reactRoot = document.getElementById('react-root');
