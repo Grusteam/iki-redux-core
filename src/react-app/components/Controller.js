@@ -9,8 +9,8 @@ import ACTIONS, {  } from '../redux/actions.js';
 import Button from './Button.js';
 
 /* tools */
-import CONSTANTS, { controllerSetup } from '../Constants.js';
-import UTILS, { notationModifier, getReduxStateFields, getSetupFields } from '../Utils.js';
+import CONSTANTS, { reduxStoreSetup } from '../Constants.js';
+import UTILS, { notationModifier, getReduxStateFields } from '../Utils.js';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
@@ -35,24 +35,24 @@ class Controller extends PureComponent {
 		const
 			{ testButtonClick } = this.props, /* redux */
 			{  } = this.props; /* parent */
-			
+
 		return <div className="controller">
 			<div className="controller__title">Controller</div>
 
-			{controllerSetup.map(({name, setup}, i) => {
-				return <div className="section" key={`${name}_${i}`}>
-					<div className="section__title">{ name }</div>
+			{Object.keys(reduxStoreSetup).map((branch, i) => {
+				return <div className="section" key={`${branch}_${i}`}>
+					<div className="section__title">{ branch }</div>
 					<div className="section__body">
-						{setup.map(({name, reducer, field}, i) => {
-							const camel = notationModifier(reducer);
+						{Object.keys(reduxStoreSetup[branch]).map((key, i) => {
+							const reduxAction = reduxStoreSetup[branch][key]['action'];
 
-							return <div className="param" key={`${reducer}_${i}`}>
+							return <div className="param" key={`${key}_${i}`}>
 								<Button
-								name={name}
-								onClick={() => testButtonClick(camel)}
+								name={key}
+								onClick={() => testButtonClick(reduxAction)}
 							/>
 								<div className="param__value">
-									{`${this.props[field]}`}
+									{`${this.props[key]}`}
 								</div>
 							</div>
 						})}	
@@ -69,7 +69,7 @@ const
 	mapStateToProps = (state) => {
 		
 		return {
-			...getReduxStateFields(state, getSetupFields(controllerSetup))
+			...getReduxStateFields(state, reduxStoreSetup)
 		};
 	},
 	mapDispatchToProps = dispatch => ({

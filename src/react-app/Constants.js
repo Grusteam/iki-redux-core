@@ -1,122 +1,58 @@
 import UTILS, {  } from './Utils';
 
 export const
-	controllerSetup = [
-		{
-			name: 'Main',
-			branch: 'main',
-			setup: [
-				{
-					name: 'splash',
-					reducer: 'SHOW_SPLASH',
-					field: 'SHOW_SPLASH',
-				},
-				{
-					name: 'loader',
-					reducer: 'SHOW_LOADER',
-					field: 'SHOW_LOADER',
-				},
-			]
+	reduxStoreSetup = {
+	/* CLOUD OF TAGS */
+	cloud: {
+		'CLOUD_SELECTED_TAGS': {
+			action: 'setCloudSelectedTags',
+			constant: 'SET_CLOUD_SELECTED_TAGS',
+			defaultState: [],
 		},
-		{
-			name: 'Graph',
-			branch: 'graph',
-			setup: [
-				{
-					name: 'type',
-					reducer: 'GRAPH_TYPE',
-					field: 'GRAPH_TYPE',
-				},
-				{
-					name: 'path',
-					reducer: 'GRAPH_PATH',
-					field: 'GRAPH_PATH',
-				},
-			]
+	},
+
+	/* CONROLLED ELEMENTS */
+	controlled: {
+		'INPUT_VALUE': {
+			action: 'setInputValue',
+			constant: 'SET_INPUT_VALUE',
+			defaultState: '',
 		},
-		{
-			name: 'Cloud',
-			branch: 'cloud',
-			setup: [
-				{
-					name: 'selection',
-					reducer: 'CHANGE_SELECTION',
-					field: 'SELECTION',
-				},
-			]
+	},
+	
+	/* GRAPH */
+	graph: {
+		'GRAPH_TYPE': {
+			action: 'setGraphType',
+			constant: 'SET_GRAPH_TYPE',
+			defaultState: false,
 		},
-	],
-	initialState = {
-		auth: {
-			
+		'GRAPH_PATH': {
+			action: 'setGraphPathState',
+			constant: 'SET_GRAPH_PATH_STATE',
+			defaultState: false,
 		},
-		main: {
-			test_1_key: 'test_1_val',
-			TEST_COUNTER: 0,
-			SHOW_SPLASH: false,
-			SHOW_LOADER: false,
-			USER: {
-				
-			},
+	},
+
+	/* MAIN STATES */
+	main: {
+		'SHOW_SPLASH': {
+			action: 'setSplashVisibility',
+			constant: 'SET_SPLASH_VISIBILITY',
+			defaultState: false,
 		},
-		graph: {
-			GRAPH_TYPE: false,
-			GRAPH_PATH: false,
+		'SHOW_LOADER': {
+			action: 'setLoaderVisibility',
+			constant: 'SET_LOADER_VISIBILITY',
+			defaultState: true,
 		},
-		cloud: {
-			SELECTION: [0],
-		},
-	};
+	},
+};
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 	
 const CONSTANTS = {
-	controllerSetup,
-	initialState,
+	reduxStoreSetup
 };
 
 export default CONSTANTS;
-
-const reduxStoreSetup = {
-	/* MAIN STATES */
-	'SHOW_SPLASH': {
-		action: 'SET_SPLASH_VISIBILITY',
-		defaultState: false,
-	},
-	'SHOW_LOADER': {
-		action: 'SET_LOADER_VISIBILITY',
-		defaultState: true,
-	},
-
-	/* CONROLLED ELEMENTS */
-	'INPUT_VALUE': {
-		action: 'SET_INPUT_VALUE',
-		defaultState: '',
-	},
-	
-	/* GRAPH */
-	'GRAPH_TYPE': {
-		action: 'SET_GRAPH_TYPE',
-		defaultState: false,
-	},
-	'GRAPH_PATH': {
-		action: 'SET_GRAPH_PATH_STATE',
-		defaultState: false,
-	},
-
-	/* CLOUD */
-	'CLOUD_SELECTED_TAGS': {
-		action: 'SET_CLOUD_SELECTED_TAGS',
-		defaultState: [],
-	},
-
-}
-
-// const reduxStore = {
-// 	/* MAIN STATES */
-// 	SHOW_SPLASH
-// 	SHOW_LOADER
-
-// 	/* CONROLLED ELEMENTS */
-// 	INPUT_VALUE
-// }

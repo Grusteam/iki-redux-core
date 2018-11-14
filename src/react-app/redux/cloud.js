@@ -1,7 +1,7 @@
 import UTILS, {  } from '../Utils';
 import CONSTANTS, {  } from '../Constants';
 
-const rootReducer = (state = {}, { type, payload = {} }) => {
+const cloud = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.cloud */
 	const { nodes } = payload;
 	
@@ -18,4 +18,4 @@ const rootReducer = (state = {}, { type, payload = {} }) => {
 	}
 };
 
-export default rootReducer;
+export default cloud;

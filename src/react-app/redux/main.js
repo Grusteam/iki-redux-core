@@ -1,7 +1,7 @@
 import UTILS, {  } from '../Utils';
 import CONSTANTS, {  } from '../Constants';
 
-const rootReducer = (state = {}, action) => {
+const main = (state = {}, action) => {
 	/* state - это ветка state.main */
 	const {
 		value = '',
@@ -26,4 +26,4 @@ const rootReducer = (state = {}, action) => {
 	}
 };
 
-export default rootReducer;
+export default main;

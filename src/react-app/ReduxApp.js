@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 /* reducers */
-import main from './redux/main'
-import graph from './redux/graph'
-import cloud from './redux/cloud'
+import main from './redux/main';
+import graph from './redux/graph';
+import cloud from './redux/cloud';
+import controlled from './redux/controlled';
 
 /* tools */
-import CONSTANTS, {  } from './Constants';
+import CONSTANTS, { reduxStoreSetup } from './Constants';
 import UTILS, { getInitialState } from './Utils';
 
 /* components */
@@ -20,8 +21,9 @@ const store = createStore(
 		main,
 		graph,
 		cloud,
+		controlled,
 	}),
-	getInitialState(),
+	getInitialState(reduxStoreSetup),
 	compose(
 		// applyMiddleware(thunk),
 		window.devToolsExtension ? window.devToolsExtension() : f => f

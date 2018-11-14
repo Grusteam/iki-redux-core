@@ -1,14 +1,20 @@
-import CONSTANTS, { initialState } from './Constants';
+/*tools*/
+import { forEach } from 'lodash';
+import CONSTANTS, {  } from './Constants';
 
 export const
-	getInitialState = () => {
-		const tests = [2];
+	getInitialState = (setup) => {
+		const s = {};
 
-		tests.forEach(val => {
-			initialState.main[`test_${val}_key`] = `test_${val}_val`;
-		});
+		forEach(setup, (branch, branchKey) => {
+			forEach(branch, ({ action, constant, defaultState }, key, all) => {
+				if (!s[branchKey]) s[branchKey] = {};
+				
+				s[branchKey][key] = defaultState;
+			})
+		})
 
-		return initialState;
+		return s;
 	},
 	/* snake-case to camelCase to snake-case */
 	notationModifier = (input = '') => {
@@ -23,21 +29,19 @@ export const
 	getSetupFields = setup => {
 		const a = [];
 
-		setup.forEach(({ name, branch, setup }) => {
-			setup.forEach(({ name, reducer, field }) => {
-				const camel = notationModifier(field);
+		forEach(setup, (branch, branchVal) => {
+			forEach(branch, (key, keyVal) => {
+				a.push({ branch: branchVal, key: keyVal });
+			})
+		})
 
-				a.push({ branch, field });
-			});
-		});
-			
 		return a;
 	},
-	getReduxStateFields = (state, fields) => {
+	getReduxStateFields = (state, setup) => {
 		const o = {};
 
-		fields.forEach(({ branch, reducer, field }) => {
-			o[field] = state[branch][field];
+		getSetupFields(setup).forEach(({ branch, key }) => {
+			o[key] = state[branch][key];
 		});
 
 		return o;

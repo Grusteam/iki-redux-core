@@ -2,25 +2,29 @@ import CONSTANTS, {  } from '../Constants';
 
 export const
 
-/* main */
-	showSplash = () => ({type: 'SHOW_SPLASH'}),
-	showLoader = () => ({type: 'SHOW_LOADER'}),
+/* CLOUD OF TAGS */
+	setCloudSelectedTags = (nodes) => ({type: 'SET_CLOUD_SELECTED_TAGS', payload: { nodes }}),
 
-/* graph */
-	graphType = () => ({type: 'GRAPH_TYPE'}),
-	graphPath = () => ({type: 'GRAPH_PATH'}),
+/* CONROLLED ELEMENTS */
+	setInputValue = (value) => ({type: 'SET_INPUT_VALUE', payload: { value }}),
 
-/* cloud */
-	changeSelection = (nodes) => ({type: 'CHANGE_SELECTION', payload: { nodes }});
+/* GRAPH */
+	setGraphType = () => ({type: 'SET_GRAPH_TYPE'}),
+	setGraphPathState = () => ({type: 'SET_GRAPH_PATH_STATE'}),
+
+/* MAIN STATES */
+	setSplashVisibility = () => ({type: 'SET_SPLASH_VISIBILITY'}),
+	setLoaderVisibility = () => ({type: 'SET_LOADER_VISIBILITY'});
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
 const ACTIONS = {
-	showSplash,
-	showLoader,
-	graphType,
-	graphPath,
-	changeSelection,
+	setCloudSelectedTags,
+	setInputValue,
+	setGraphType,
+	setGraphPathState,
+	setSplashVisibility,
+	setLoaderVisibility,
 };
 
 export default ACTIONS;

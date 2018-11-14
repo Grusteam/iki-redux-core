@@ -1,23 +1,19 @@
 import UTILS, {  } from '../Utils';
 import CONSTANTS, {  } from '../Constants';
 
-const graph = (state = {}, action) => {
-	/* state - это ветка state.graph */
+const controlled = (state = {}, action) => {
+	/* state - это ветка state.controlled */
 	const {
 		value = '',
 	} = action;
 	
 	switch (action.type) {
-		case 'SET_GRAPH_TYPE':
+		
+		case 'SET_INPUT_VALUE':
 			return { ...state,
-				'GRAPH_TYPE': !state['GRAPH_TYPE'],
+				'INPUT_VALUE': value,
 			};
 		
-		case 'SET_GRAPH_PATH_STATE':
-			return { ...state,
-				'GRAPH_PATH': !state['GRAPH_PATH'],
-			};
-			
 		/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 			
 		default:
@@ -25,4 +21,4 @@ const graph = (state = {}, action) => {
 	}
 };
 
-export default graph;
+export default controlled;
