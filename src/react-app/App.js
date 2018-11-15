@@ -34,8 +34,7 @@ class App extends Component {
 			
 		return <div id="app" className="app">
 			<p style={{position: 'absolute', top: 0, left: 0}}>App</p>
-			<Controller
-			/>
+			<Controller/>
 		</div>
 	}
 }

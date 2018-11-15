@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 /* tools */
@@ -10,16 +10,7 @@ import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-class LayoutComponent extends Component {
-	constructor(props, context) {
-		super(props);
-
-		const
-			{  } = this.props; /* parent */
-	}
-	
-	/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
-	
+class LayoutComponent extends PureComponent {
 	render() {
 		const
 			{  } = this.props; /* parent */
@@ -28,7 +19,7 @@ class LayoutComponent extends Component {
 	}
 }
 
-PairPure.propTypes = {
+LayoutComponent.propTypes = {
 	// onClick: PropTypes.func.isRequired,
 	// value: PropTypes.string.isRequired,
 };

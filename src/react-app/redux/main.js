@@ -5,7 +5,9 @@ const main = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.main */
 	// console.log('state, type, payload', state, type, payload);
 
-	const { value = '' } = payload;
+	const { 
+		value = '',
+	} = payload;
 	
 	
 	switch (type) {

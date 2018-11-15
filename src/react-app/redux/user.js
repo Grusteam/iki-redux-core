@@ -5,10 +5,10 @@ const user = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.user */
 	// console.log('state, type, payload', state, type, payload);
 
-	const { value = '' } = payload;
+	const { 
+		value = '',
+	} = payload;
 
-	console.log('type, payload', type, payload);
-	
 	switch (type) {
 		case 'SET_USER_NAME':
 			return { ...state,

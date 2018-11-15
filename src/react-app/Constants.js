@@ -70,3 +70,42 @@ const CONSTANTS = {
 };
 
 export default CONSTANTS;
+
+const dummyActions = {
+	USER: [
+		'USER_NAME',
+		'USER_ID',
+	],
+	CLOUD: [
+		'CLOUD_SELECTED_TAGS',
+		'INPUT_VALUE',
+	],
+	GRAPH: [
+		'GRAPH_TYPE',
+		'GRAPH_PATH_STATE',
+	],
+	GOALS: [
+	],
+	PROFILE: [
+	],
+	MAIN: [
+		'SPLASH_VISIBILITY',
+		'LOADER_VISIBILITY',
+	],
+};
+
+const dummyConstants = {
+	INPUTS: [
+		'LOGIN_EMAIL',
+		'LOGIN_PASSWORD',
+	],
+	USER: [
+		'USER_NAME',
+		'USER_SURNAME',
+		'USER_ID',
+	],
+	MAIN: [
+		'SHOW_SPLASH',
+		'SHOW_LOADER',
+	],
+};

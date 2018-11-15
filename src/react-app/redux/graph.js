@@ -5,7 +5,9 @@ const graph = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.graph */
 	// console.log('state, type, payload', state, type, payload);
 
-	const { value = '' } = payload;
+	const { 
+		value = '',
+	} = payload;
 	
 	switch (type) {
 		case 'SET_GRAPH_TYPE':

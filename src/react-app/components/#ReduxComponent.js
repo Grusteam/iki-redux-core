@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import ACTIONS, {  } from '../redux/actions'
 
 /* components */
-import Button from './Button'
+// import Button from './Button'
 
 /* tools */
 import CONSTANTS, {  } from '../Constants';

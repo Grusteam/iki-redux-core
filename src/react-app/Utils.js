@@ -3,14 +3,27 @@ import { forEach } from 'lodash';
 import CONSTANTS, {  } from './Constants';
 
 export const
+	SCUDecision = (currentProps, nextProps, renderFelds) => {
+		let
+			fields = renderFelds,
+			needUpdates = false;
+
+		if (typeof renderFelds === 'string') fields = [renderFelds];
+
+		fields.forEach(field => {
+			if (currentProps[field] !== nextProps[field]) needUpdates = true;
+		});
+
+		return needUpdates;
+	},
 	getInitialState = (setup) => {
 		const s = {};
 
-		forEach(setup, (branch, branchKey) => {
-			forEach(branch, ({ action, constant, defaultState }, key, all) => {
-				if (!s[branchKey]) s[branchKey] = {};
+		forEach(setup, (branch, branchField) => {
+			forEach(branch, ({ action, constant, defaultState }, field, all) => {
+				if (!s[branchField]) s[branchField] = {};
 				
-				s[branchKey][key] = defaultState;
+				s[branchField][field] = defaultState;
 			})
 		})
 
@@ -30,8 +43,8 @@ export const
 		const a = [];
 
 		forEach(setup, (branch, branchVal) => {
-			forEach(branch, (key, keyVal) => {
-				a.push({ branch: branchVal, key: keyVal });
+			forEach(branch, (field, fieldVal) => {
+				a.push({ branch: branchVal, field: fieldVal });
 			})
 		})
 
@@ -40,8 +53,8 @@ export const
 	getReduxStateFields = (state, setup) => {
 		const o = {};
 
-		getSetupFields(setup).forEach(({ branch, key }) => {
-			o[key] = state[branch] ? state[branch][key] : undefined;
+		getSetupFields(setup).forEach(({ branch, field }) => {
+			o[field] = state[branch] ? state[branch][field] : undefined;
 		});
 
 		return o;
@@ -50,6 +63,7 @@ export const
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 	
 const UTILS = {
+	SCUDecision,
 	getInitialState,
 	notationModifier,
 	getSetupFields,

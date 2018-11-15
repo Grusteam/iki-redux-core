@@ -3,7 +3,7 @@ import CONSTANTS, {  } from '../Constants';
 export const
 
 /* CLOUD OF TAGS */
-	setCloudSelectedTags = (nodes) => ({type: 'SET_CLOUD_SELECTED_TAGS', payload: { nodes }}),
+	setCloudSelectedTags = (nodes) => ({type: 'SET_CLOUD_SELECTED_TAGS', payload: { nodes: [nodes] }}),
 
 /* CONROLLED ELEMENTS */
 	setInputValue = (value) => ({type: 'SET_INPUT_VALUE', payload: { value }}),
