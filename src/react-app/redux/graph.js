@@ -1,13 +1,13 @@
 import UTILS, {  } from '../Utils';
 import CONSTANTS, {  } from '../Constants';
 
-const graph = (state = {}, action) => {
+const graph = (state = {}, { type, payload = {} }) => {
 	/* state - это ветка state.graph */
-	const {
-		value = '',
-	} = action;
+	// console.log('state, type, payload', state, type, payload);
+
+	const { value = '' } = payload;
 	
-	switch (action.type) {
+	switch (type) {
 		case 'SET_GRAPH_TYPE':
 			return { ...state,
 				'GRAPH_TYPE': !state['GRAPH_TYPE'],

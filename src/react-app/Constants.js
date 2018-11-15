@@ -7,7 +7,7 @@ export const
 		'CLOUD_SELECTED_TAGS': {
 			action: 'setCloudSelectedTags',
 			constant: 'SET_CLOUD_SELECTED_TAGS',
-			defaultState: [],
+			defaultState: ['tag'],
 		},
 	},
 
@@ -16,7 +16,7 @@ export const
 		'INPUT_VALUE': {
 			action: 'setInputValue',
 			constant: 'SET_INPUT_VALUE',
-			defaultState: '',
+			defaultState: 'input',
 		},
 	},
 	
@@ -39,12 +39,26 @@ export const
 		'SHOW_SPLASH': {
 			action: 'setSplashVisibility',
 			constant: 'SET_SPLASH_VISIBILITY',
-			defaultState: false,
+			defaultState: true,
 		},
 		'SHOW_LOADER': {
 			action: 'setLoaderVisibility',
 			constant: 'SET_LOADER_VISIBILITY',
-			defaultState: true,
+			defaultState: false,
+		},
+	},
+
+	/* USER */
+	user: {
+		'USER_NAME': {
+			action: 'setUserName',
+			constant: 'SET_USER_NAME',
+			defaultState: 'USER_NAME',
+		},
+		'USER_ID': {
+			action: 'setUserId',
+			constant: 'SET_USER_ID',
+			defaultState: 'USER_ID',
 		},
 	},
 };

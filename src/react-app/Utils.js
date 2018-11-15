@@ -41,7 +41,7 @@ export const
 		const o = {};
 
 		getSetupFields(setup).forEach(({ branch, key }) => {
-			o[key] = state[branch][key];
+			o[key] = state[branch] ? state[branch][key] : undefined;
 		});
 
 		return o;

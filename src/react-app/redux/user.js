@@ -1,23 +1,23 @@
 import UTILS, {  } from '../Utils';
 import CONSTANTS, {  } from '../Constants';
 
-const main = (state = {}, { type, payload = {} }) => {
-	/* state - это ветка state.main */
+const user = (state = {}, { type, payload = {} }) => {
+	/* state - это ветка state.user */
 	// console.log('state, type, payload', state, type, payload);
 
 	const { value = '' } = payload;
-	
+
+	console.log('type, payload', type, payload);
 	
 	switch (type) {
-		
-		case 'SET_SPLASH_VISIBILITY':
+		case 'SET_USER_NAME':
 			return { ...state,
-				'SHOW_SPLASH': !state['SHOW_SPLASH'],
+				'USER_NAME': value,
 			};
-		
-		case 'SET_LOADER_VISIBILITY':
+			
+		case 'SET_USER_ID':
 			return { ...state,
-				'SHOW_LOADER': !state['SHOW_LOADER'],
+				'USER_ID': value,
 			};
 		
 		/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
@@ -27,4 +27,4 @@ const main = (state = {}, { type, payload = {} }) => {
 	}
 };
 
-export default main;
+export default user;

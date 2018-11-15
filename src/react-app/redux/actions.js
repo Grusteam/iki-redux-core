@@ -14,7 +14,11 @@ export const
 
 /* MAIN STATES */
 	setSplashVisibility = () => ({type: 'SET_SPLASH_VISIBILITY'}),
-	setLoaderVisibility = () => ({type: 'SET_LOADER_VISIBILITY'});
+	setLoaderVisibility = () => ({type: 'SET_LOADER_VISIBILITY'}),
+
+/* USER */
+	setUserName = (value) => ({type: 'SET_USER_NAME', payload: { value }}),
+	setUserId = (value) => ({type: 'SET_USER_ID', payload: { value }});
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
@@ -25,6 +29,8 @@ const ACTIONS = {
 	setGraphPathState,
 	setSplashVisibility,
 	setLoaderVisibility,
+	setUserName,
+	setUserId,
 };
 
 export default ACTIONS;
