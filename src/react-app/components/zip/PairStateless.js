@@ -10,7 +10,7 @@ import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-const PairPure = ({ onClick, value, field }) => <div className="param">
+const ValuePair = ({ onClick, value, field }) => <div className="param">
 		<Button
 		name={field}
 		onClick={onClick}
@@ -22,11 +22,11 @@ const PairPure = ({ onClick, value, field }) => <div className="param">
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-PairPure.propTypes = {
+ValuePair.propTypes = {
   onClick: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   field: PropTypes.string.isRequired,
 };
 
 
-export default PairPure;
+export default ValuePair;

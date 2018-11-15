@@ -28,7 +28,7 @@ class LayoutComponent extends Component {
 	}
 }
 
-PairPure.propTypes = {
+LayoutComponent.propTypes = {
 	// onClick: PropTypes.func.isRequired,
 	// value: PropTypes.string.isRequired,
 };

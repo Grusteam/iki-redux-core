@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 /* tools */
@@ -10,7 +10,16 @@ import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-class LayoutPureComponent extends PureComponent {
+class RenderTests extends Component {
+	constructor(props, context) {
+		super(props);
+
+		const
+			{  } = this.props; /* parent */
+	}
+	
+	/* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
+	
 	render() {
 		const
 			{  } = this.props; /* parent */
@@ -19,9 +28,9 @@ class LayoutPureComponent extends PureComponent {
 	}
 }
 
-LayoutPureComponent.propTypes = {
+RenderTests.propTypes = {
 	// onClick: PropTypes.func.isRequired,
 	// value: PropTypes.string.isRequired,
 };
 
-export default LayoutPureComponent;
+export default RenderTests;

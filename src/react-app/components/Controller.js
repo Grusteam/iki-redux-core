@@ -8,7 +8,7 @@ import ACTIONS, { setInputValue } from '../redux/actions.js';
 /* components */
 import Button from './Button.js';
 import InputLayoutPure from './InputLayoutPure';
-import PairPure from './PairPure';
+import ValuePair from './ValuePair';
 import HelloStateless from './HelloStateless';
 import WelcomePure from './WelcomePure';
 
@@ -88,7 +88,7 @@ class Controller extends PureComponent {
 									name={''}
 									onChange={setInputValueCall}
 								/> :
-								<PairPure
+								<ValuePair
 									key={identifier}
 									onClick={onClick}
 									value={value}

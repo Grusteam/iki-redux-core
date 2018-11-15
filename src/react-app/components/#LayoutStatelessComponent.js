@@ -10,15 +10,15 @@ import UTILS, {  } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-const LayoutPureComponent = ({ prop }) => {
+const LayoutStatelessComponent = ({ prop }) => {
 	return <div></div>;
 }
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-LayoutPureComponent.propTypes = {
+LayoutStatelessComponent.propTypes = {
 //   test: PropTypes.string.isRequired,
 };
 
 
-export default LayoutPureComponent;
+export default LayoutStatelessComponent;

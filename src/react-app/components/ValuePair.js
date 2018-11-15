@@ -10,7 +10,7 @@ import UTILS, { SCUDecision } from '../Utils';
 
 /* ... . .-. --. . / --.. .... ..- .-. .- ...- .-.. . ...- */
 
-class PairPure extends Component {
+class ValuePair extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
 		return SCUDecision(this.props, nextProps, 'value');
 	}
@@ -31,10 +31,10 @@ class PairPure extends Component {
 	}
 }
 
-PairPure.propTypes = {
+ValuePair.propTypes = {
 	onClick: PropTypes.func.isRequired,
 	value: PropTypes.string.isRequired,
 	field: PropTypes.string.isRequired,
 };
 
-export default PairPure;
+export default ValuePair;
